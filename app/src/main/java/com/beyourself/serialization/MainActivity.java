@@ -8,8 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 public class MainActivity extends AppCompatActivity {
@@ -47,9 +49,38 @@ public class MainActivity extends AppCompatActivity {
 
                 try {
                     ObjectOutputStream outputStream = new ObjectOutputStream(
-                        openFileOutput(FILE_NAME, MODE_PRIVATE)
+                            openFileOutput(FILE_NAME, MODE_PRIVATE)
                     );
+                    outputStream.writeObject(student);
+                    outputStream.flush();
+                    outputStream.close();
+                    Toast.makeText(
+                            MainActivity.this,
+                            "序列化成功",
+                            Toast.LENGTH_SHORT
+                    ).show();
                 } catch (IOException e) {
+                    Log.d("MyTag", e.getMessage());
+                }
+            }
+        });
+
+        buttonLoad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    ObjectInputStream objectInputStream = new ObjectInputStream(
+                            openFileInput(FILE_NAME)
+                    );
+                    Student students = (Student) objectInputStream.readObject();
+                    editTextAge.setText(String.valueOf(students.getAge()));
+                    editTextChinese.setText(String.valueOf(students.getScore().getChinese()));
+                    editTextEnglish.setText(String.valueOf(students.getScore().getEnglish()));
+                    editTextMath.setText(String.valueOf(students.getScore().getMath()));
+                    editTextName.setText(students.getName());
+                    objectInputStream.close();
+                } catch (IOException | ClassNotFoundException e) {
+                    e.printStackTrace();
                     Log.d("MyTag", e.getMessage());
                 }
             }
