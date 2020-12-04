@@ -3,6 +3,7 @@ package com.beyourself.serialization;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,6 +15,9 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        MyApplication application = (MyApplication) getApplication();
+        // application.student;
         ActivityMain2Binding binding = DataBindingUtil.setContentView(
                  this, R.layout.activity_main2);
         Intent intent = getIntent();
