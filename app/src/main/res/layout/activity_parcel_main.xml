@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+      
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name"
+            android:text="1"
             app:layout_constraintBottom_toTopOf="@+id/guideline7"
             app:layout_constraintEnd_toStartOf="@+id/guideline12"
             app:layout_constraintStart_toStartOf="parent"
@@ -79,7 +79,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name"
+            android:text="2"
             app:layout_constraintBottom_toTopOf="@+id/math"
             app:layout_constraintEnd_toEndOf="@+id/math"
             app:layout_constraintStart_toStartOf="@+id/math"
@@ -91,7 +91,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name"
+            android:text="3"
             app:layout_constraintBottom_toTopOf="@+id/english"
             app:layout_constraintEnd_toEndOf="@+id/english"
             app:layout_constraintStart_toStartOf="@+id/english"
@@ -103,7 +103,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name"
+            android:text="4"
             app:layout_constraintBottom_toTopOf="@+id/chinese"
             app:layout_constraintEnd_toEndOf="@+id/chinese"
             app:layout_constraintStart_toStartOf="@+id/chinese"
@@ -115,7 +115,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name"
+            android:text="5"
             app:layout_constraintBottom_toTopOf="@+id/guideline11"
             app:layout_constraintEnd_toStartOf="@+id/guideline12"
             app:layout_constraintStart_toStartOf="parent"
